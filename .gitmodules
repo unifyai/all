@@ -28,3 +28,6 @@
 [submodule "submodules/doc-builder"]
 	path = submodules/doc-builder
 	url = git@github.com:ivy-dl/doc-builder.git
+[submodule "submodules/ivy-dl.github.io"]
+	path = submodules/ivy-dl.github.io
+	url = git@github.com:ivy-dl/ivy-dl.github.io.git
