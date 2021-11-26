@@ -1,0 +1,6 @@
+[submodule "submodules/mech"]
+	path = submodules/mech
+	url = https://github.com/ivy-dl/mech
+[submodule "submodules/ivy"]
+	path = submodules/ivy
+	url = https://github.com/ivy-dl/ivy
