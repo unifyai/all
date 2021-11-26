@@ -4,3 +4,21 @@
 [submodule "submodules/ivy"]
 	path = submodules/ivy
 	url = git@github.com:ivy-dl/ivy.git
+[submodule "submodules/vision"]
+	path = submodules/vision
+	url = git@github.com:ivy-dl/vision.git
+[submodule "submodules/robot"]
+	path = submodules/robot
+	url = git@github.com:ivy-dl/robot.git
+[submodule "submodules/gym"]
+	path = submodules/gym
+	url = git@github.com:ivy-dl/gym.git
+[submodule "submodules/memory"]
+	path = submodules/memory
+	url = git@github.com:ivy-dl/memory.git
+[submodule "submodules/models"]
+	path = submodules/models
+	url = git@github.com:ivy-dl/models.git
+[submodule "submodules/builder"]
+	path = submodules/builder
+	url = git@github.com:ivy-dl/builder.git
