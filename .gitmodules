@@ -22,3 +22,9 @@
 [submodule "submodules/builder"]
 	path = submodules/builder
 	url = git@github.com:ivy-dl/builder.git
+[submodule "submodules/demo-utils"]
+	path = submodules/demo-utils
+	url = git@github.com:ivy-dl/demo-utils.git
+[submodule "submodules/doc-builder"]
+	path = submodules/doc-builder
+	url = git@github.com:ivy-dl/doc-builder.git
