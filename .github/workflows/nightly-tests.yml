@@ -1,0 +1,15 @@
+name: nightly-tests
+on: [push]
+jobs:
+  run-nightly-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️Ivy All
+        uses: actions/checkout@v2
+        with:
+          path: ivy_all
+          persist-credentials: false
+
+      - name: Run Tests
+        run: |
+          docker run --rm -v `pwd`/ivy_all:/ivy_all ivydl/ivy-all:latest python3 -m pytest all_tests_n_demos/
