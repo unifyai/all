@@ -5,6 +5,12 @@
       <excludeFolder url="file://$MODULE_DIR$/submodules" />
       <excludeFolder url="file://$MODULE_DIR$/all_demos" />
       <excludeFolder url="file://$MODULE_DIR$/all_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_builder_demos" />
+      <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_gym_demos" />
+      <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_mech_demos" />
+      <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_memory_demos" />
+      <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_robot_demos" />
+      <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_vision_demos" />
     </content>
     <orderEntry type="jdk" jdkName="Remote Python 3.8.10 Docker (ivydl/ivy-all:latest)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
