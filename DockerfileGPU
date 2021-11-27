@@ -26,30 +26,35 @@ RUN git clone https://github.com/ivy-dl/demo-utils && \
 RUN git clone https://github.com/ivy-dl/mech && \
     cd mech && \
     cat requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
+    cat ivy_mech_demos/requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
     python3 setup.py develop --no-deps
 
 # Install Ivy Vision
 RUN git clone https://github.com/ivy-dl/vision && \
     cd vision && \
     cat requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
+    cat ivy_vision_demos/requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
     python3 setup.py develop --no-deps
 
 # Install Ivy Robot
 RUN git clone https://github.com/ivy-dl/robot && \
     cd robot && \
     cat requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
+    cat ivy_robot_demos/requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
     python3 setup.py develop --no-deps
 
 # Install Ivy Gym
 RUN git clone https://github.com/ivy-dl/gym && \
     cd gym && \
     cat requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
+    cat ivy_robot_demos/requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
     python3 setup.py develop --no-deps
 
 # Install Ivy Memory
 RUN git clone https://github.com/ivy-dl/memory && \
     cd memory && \
     cat requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
+    cat ivy_memory_demos/requirements.txt | grep -v "ivy-" | pip3 install --no-cache-dir -r /dev/stdin && \
     python3 setup.py develop --no-deps
 
 # Install Ivy Models
