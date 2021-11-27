@@ -2,6 +2,12 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ivy_builder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ivy_gym" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ivy_memory" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ivy_models" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ivy_robot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ivy_vision" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/ivy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/mech" vcs="Git" />
   </component>
