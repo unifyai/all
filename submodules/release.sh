@@ -8,6 +8,11 @@ release_submodule() {
 
   printf '\nReleasing %s\n\n' "$SUBMODULE"
 
+  if [[ $(git status --porcelain) ]]; then
+    echo "Git changes detected, either add and commit these or remove them before installing, exiting"
+    exit
+  fi
+
   if [ -z "$VERSION_OLD" ]; then
       echo "You need to provide an old version number"
       exit
