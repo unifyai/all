@@ -94,7 +94,15 @@ release_submodule() {
 
 VERSION_OLD="$1"
 VERSION_NEW="$2"
-for SUBMODULE in "${@:3}"
+THIRD="$3"
+
+if [[ "$THIRD" == "all" ]]; then
+  SUBMODULES="ivy mech vision robot gym memory builder models"
+else
+  SUBMODULES="${*:3}"
+fi
+
+for SUBMODULE in $SUBMODULES
 do
   cd "$SUBMODULE" || exit
   release_submodule "$VERSION_OLD" "$VERSION_NEW" "$SUBMODULE"
