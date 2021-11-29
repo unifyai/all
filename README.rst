@@ -133,7 +133,7 @@ differentiable memory, and differentiable gym environments. Click on the icons b
 
         <br clear="all" />
 
-        <img width="20%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
+        <img width="9%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
         <a href="https://github.com/ivy-dl/memory">
             <img width="15%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/ivy_memory.png">
         </a>
@@ -145,10 +145,14 @@ differentiable memory, and differentiable gym environments. Click on the icons b
         <a href="https://github.com/ivy-dl/models">
             <img width="15%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/ivy_models.png">
         </a>
+        <img width="7%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
+        <a href="https://github.com/ivy-dl/ecosystem">
+            <img width="15%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/ivy_ecosystem.png">
+        </a>
 
         <br clear="all" />
 
-        <img width="21%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
+        <img width="10%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
         <a href="https://pypi.org/project/ivy-memory">
             <img width="13%" style="float: left;" src="https://badge.fury.io/py/ivy-memory.svg">
         </a>
@@ -160,10 +164,13 @@ differentiable memory, and differentiable gym environments. Click on the icons b
         <a href="https://pypi.org/project/ivy-models">
             <img width="13%" style="float: left;" src="https://badge.fury.io/py/ivy-models.svg">
         </a>
+        <a href="https://github.com/ivy-dl/ecosystem/actions?query=workflow%3Adocs">
+            <img style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://img.shields.io/github/workflow/status/ivy-dl/ecosystem/docs?label=docs">
+        </a>
 
         <br clear="all" />
 
-        <img width="23%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
+        <img width="12%" style="float: left;" src="https://raw.githubusercontent.com/ivy-dl/ivy-dl.github.io/master/img/externally_linked/logos/empty.png">
         <a href="https://github.com/ivy-dl/memory/actions?query=workflow%3Anightly-tests">
             <img width="9%" style="float: left;" src="https://img.shields.io/github/workflow/status/ivy-dl/memory/nightly-tests?label=tests">
         </a>
