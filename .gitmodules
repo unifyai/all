@@ -31,3 +31,6 @@
 [submodule "submodules/ivy-dl.github.io"]
 	path = submodules/ivy-dl.github.io
 	url = git@github.com:ivy-dl/ivy-dl.github.io.git
+[submodule "submodules/ecosystem"]
+	path = submodules/ecosystem
+	url = git@github.com:ivy-dl/ecosystem.git
