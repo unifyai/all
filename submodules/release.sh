@@ -14,6 +14,7 @@ release_submodule() {
   fi
 
   GIT_STATUS_POR_BRA=$(git status --porcelain --branch)
+
   if [[ "$GIT_STATUS_POR_BRA" == *"ahead"* ]]; then
     echo "Local commits are ahead of upstream, push these before releasing. Exiting."
     exit
@@ -29,10 +30,28 @@ release_submodule() {
     exit
   fi
 
+  TEST_LOG=$(curl -L "https://img.shields.io/github/workflow/status/ivy-dl/$SUBMODULE/nightly-tests")
+
+  if [ -z "$TEST_LOG" ]; then
+    echo "The test log returned empty, so cannot determine if the tests are passing or failing. Exiting."
+    exit
+  fi
+
+  if [[ "$TEST_LOG" == *"failing"* ]]; then
+    echo "The tests for the latest commit are failing, fix these failing tests before releasing. Exiting."
+    exit
+  fi
+
+  if ! [[ "$TEST_LOG" == *"passing"* ]]; then
+    echo "The tests for the latest commit are not passing, fix these failing tests before releasing. Exiting."
+    exit
+  fi
+
   if [ -z "$VERSION_OLD" ]; then
       echo "You need to provide an old version number"
       exit
   fi
+
   if [ -z "$VERSION_NEW" ]; then
       echo "You need to provide a release version number"
       exit
