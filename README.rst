@@ -1,7 +1,7 @@
 .. raw:: html
 
     <p align="center">
-        <img width="75%" style="display: block;" src='docs/partial_source/logos/logo.png'>
+        <img width="75%" style="display: block;" src="https://github.com/ivy-dl/ivy/raw/master/docs/partial_source/logos/logo.png">
     </p>
 
 .. raw:: html
@@ -186,7 +186,7 @@ This is the same for ALL Ivy functions. They can accept tensors from any framewo
 To see a list of all Ivy methods, type :code:`ivy.` into a python command prompt and press :code:`tab`.
 You should then see output like the following:
 
-.. image:: docs/partial_source/images/ivy_tab.png
+.. image:: https://github.com/ivy-dl/ivy/raw/master/docs/partial_source/images/ivy_tab.png
    :width: 100%
 
 Based on this short code sample alone, you may wonder, why is this helpful?
@@ -209,7 +209,7 @@ The core idea behind Ivy is captured by the example of the :code:`ivy.clip` func
 .. raw:: html
 
     <p align="center">
-        <img width="75%" style="display: block;" src='docs/partial_source/images/a_templated_framework.png'>
+        <img width="75%" style="display: block;" src="https://github.com/ivy-dl/ivy/raw/master/docs/partial_source/images/a_templated_framework.png">
     </p>
 
 On it's own this may not seem very exciting, there are more interesting things to do in deep learning than clip tensors.
@@ -226,7 +226,7 @@ The schematic below emphasizes that you can choose to develop at any abstraction
 .. raw:: html
 
     <p align="center">
-        <img width="50%" style="display: block;" src='docs/partial_source/images/abstraction_hierarchy.png'>
+        <img width="50%" style="display: block;" src="https://github.com/ivy-dl/ivy/raw/master/docs/partial_source/images/abstraction_hierarchy.png">
     </p>
 
 You can code entirely in Ivy, or mainly in their native DL framework, with a small amount of Ivy code.
