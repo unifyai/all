@@ -1,69 +1,75 @@
 #!/bin/bash
 
+print_red() {
+  tput setaf 1
+  echo "$1"
+  tput setaf 7
+}
+
 release_submodule() {
 
   VERSION_OLD="$1"
   VERSION_NEW="$2"
   SUBMODULE="$3"
 
-  printf '\nReleasing %s\n\n' "$SUBMODULE"
+  printf '\n\nReleasing %s\n\n\n' "$SUBMODULE"
 
   if [[ $(git status --porcelain) ]]; then
-    tput setaf 1; echo "Git changes detected, either add and commit these or remove them before installing. Skipping"
+    print_red "Git changes detected, either add and commit these or remove them before installing. Skipping"
     return
   fi
 
   GIT_STATUS_POR_BRA=$(git status --porcelain --branch)
 
   if [[ "$GIT_STATUS_POR_BRA" == *"ahead"* ]]; then
-    tput setaf 1; echo "Local commits are ahead of upstream, push these before releasing. Skipping."
+    print_red "Local commits are ahead of upstream, push these before releasing. Skipping."
     return
   fi
 
   if [[ "$GIT_STATUS_POR_BRA" == *"behind"* ]]; then
-    tput setaf 1; echo "Local commits are behind upstream, pull and/or merge these before releasing. Skipping."
+    print_red "Local commits are behind upstream, pull and/or merge these before releasing. Skipping."
     return
   fi
 
   if ! [[ "$GIT_STATUS_POR_BRA" == *"## master"* ]]; then
-    tput setaf 1; echo "Currently not on master branch, move to master branch before releasing. Skipping."
+    print_red "Currently not on master branch, move to master branch before releasing. Skipping."
     return
   fi
 
   TEST_LOG=$(curl -L "https://img.shields.io/github/workflow/status/ivy-dl/$SUBMODULE/nightly-tests")
 
   if [ -z "$TEST_LOG" ]; then
-    tput setaf 1; echo "The test log returned empty, so cannot determine if the tests are passing or failing. Skipping."
+    print_red "The test log returned empty, so cannot determine if the tests are passing or failing. Skipping."
     return
   fi
 
   if [[ "$TEST_LOG" == *"failing"* ]]; then
-    tput setaf 1; echo "The tests for the latest commit are failing, fix these failing tests before releasing. Skipping."
+    print_red "The tests for the latest commit are failing, fix these failing tests before releasing. Skipping."
     return
   fi
 
   if ! [[ "$TEST_LOG" == *"passing"* ]]; then
-    tput setaf 1; echo "The tests for the latest commit are not passing, fix these failing tests before releasing. Skipping."
+    print_red "The tests for the latest commit are not passing, fix these failing tests before releasing. Skipping."
     return
   fi
 
   if [ -z "$VERSION_OLD" ]; then
-    tput setaf 1; echo "You need to provide an old version number"
+    print_red "You need to provide an old version number"
     return
   fi
 
   if [ -z "$VERSION_NEW" ]; then
-    tput setaf 1; echo "You need to provide a release version number"
+    print_red "You need to provide a release version number"
     return
   fi
 
   if ! grep -Fq "$VERSION_OLD" setup.py; then
-    tput setaf 1; echo "The old version is not present in setup.py. Skipping"
+    print_red "The old version is not present in setup.py. Skipping"
     return
   fi
 
   if grep -Fq "$VERSION_NEW" setup.py; then
-    tput setaf 1; echo "The new version already exists in setup.py. Skipping"
+    print_red "The new version already exists in setup.py. Skipping"
     return
   fi
 
@@ -73,14 +79,14 @@ release_submodule() {
   PIP_HAS_OLD=$(echo "$PIP_RET" | grep -F "$VERSION_OLD")
 
   if [ -z "$PIP_HAS_OLD" ]; then
-    tput setaf 1; echo "The old version not found in PyPI. Skipping"
+    print_red "The old version not found in PyPI. Skipping"
     return
   fi
 
   PIP_HAS_NEW=$(echo "$PIP_RET" | grep -F "$VERSION_NEW")
 
   if [ -n "$PIP_HAS_NEW" ]; then
-    tput setaf 1; echo "The new version already in PyPI. Skipping"
+    print_red "The new version already in PyPI. Skipping"
     return
   fi
 
