@@ -9,62 +9,62 @@ release_submodule() {
   printf '\nReleasing %s\n\n' "$SUBMODULE"
 
   if [[ $(git status --porcelain) ]]; then
-    tput setaf 1; echo "Git changes detected, either add and commit these or remove them before installing. Exiting"
-    exit
+    tput setaf 1; echo "Git changes detected, either add and commit these or remove them before installing. Skipping"
+    return
   fi
 
   GIT_STATUS_POR_BRA=$(git status --porcelain --branch)
 
   if [[ "$GIT_STATUS_POR_BRA" == *"ahead"* ]]; then
-    tput setaf 1; echo "Local commits are ahead of upstream, push these before releasing. Exiting."
-    exit
+    tput setaf 1; echo "Local commits are ahead of upstream, push these before releasing. Skipping."
+    return
   fi
 
   if [[ "$GIT_STATUS_POR_BRA" == *"behind"* ]]; then
-    tput setaf 1; echo "Local commits are behind upstream, pull and/or merge these before releasing. Exiting."
-    exit
+    tput setaf 1; echo "Local commits are behind upstream, pull and/or merge these before releasing. Skipping."
+    return
   fi
 
   if ! [[ "$GIT_STATUS_POR_BRA" == *"## master"* ]]; then
-    tput setaf 1; echo "Currently not on master branch, move to master branch before releasing. Exiting."
-    exit
+    tput setaf 1; echo "Currently not on master branch, move to master branch before releasing. Skipping."
+    return
   fi
 
   TEST_LOG=$(curl -L "https://img.shields.io/github/workflow/status/ivy-dl/$SUBMODULE/nightly-tests")
 
   if [ -z "$TEST_LOG" ]; then
-    tput setaf 1; echo "The test log returned empty, so cannot determine if the tests are passing or failing. Exiting."
-    exit
+    tput setaf 1; echo "The test log returned empty, so cannot determine if the tests are passing or failing. Skipping."
+    return
   fi
 
   if [[ "$TEST_LOG" == *"failing"* ]]; then
-    tput setaf 1; echo "The tests for the latest commit are failing, fix these failing tests before releasing. Exiting."
-    exit
+    tput setaf 1; echo "The tests for the latest commit are failing, fix these failing tests before releasing. Skipping."
+    return
   fi
 
   if ! [[ "$TEST_LOG" == *"passing"* ]]; then
-    tput setaf 1; echo "The tests for the latest commit are not passing, fix these failing tests before releasing. Exiting."
-    exit
+    tput setaf 1; echo "The tests for the latest commit are not passing, fix these failing tests before releasing. Skipping."
+    return
   fi
 
   if [ -z "$VERSION_OLD" ]; then
-      tput setaf 1; echo "You need to provide an old version number"
-      exit
+    tput setaf 1; echo "You need to provide an old version number"
+    return
   fi
 
   if [ -z "$VERSION_NEW" ]; then
-      tput setaf 1; echo "You need to provide a release version number"
-      exit
+    tput setaf 1; echo "You need to provide a release version number"
+    return
   fi
 
   if ! grep -Fq "$VERSION_OLD" setup.py; then
-      tput setaf 1; echo "The old version is not present in setup.py. Exiting"
-      exit
+    tput setaf 1; echo "The old version is not present in setup.py. Skipping"
+    return
   fi
 
   if grep -Fq "$VERSION_NEW" setup.py; then
-      tput setaf 1; echo "The new version already exists in setup.py. Exiting"
-      exit
+    tput setaf 1; echo "The new version already exists in setup.py. Skipping"
+    return
   fi
 
   # shellcheck disable=SC2005
@@ -73,15 +73,15 @@ release_submodule() {
   PIP_HAS_OLD=$(echo "$PIP_RET" | grep -F "$VERSION_OLD")
 
   if [ -z "$PIP_HAS_OLD" ]; then
-      tput setaf 1; echo "The old version not found in PyPI. Exiting"
-      exit
+    tput setaf 1; echo "The old version not found in PyPI. Skipping"
+    return
   fi
 
   PIP_HAS_NEW=$(echo "$PIP_RET" | grep -F "$VERSION_NEW")
 
   if [ -n "$PIP_HAS_NEW" ]; then
-      tput setaf 1; echo "The new version already in PyPI. Exiting"
-      exit
+    tput setaf 1; echo "The new version already in PyPI. Skipping"
+    return
   fi
 
   sed -i "s/$1/$2/g" setup.py
@@ -104,7 +104,7 @@ fi
 
 for SUBMODULE in $SUBMODULES
 do
-  cd "$SUBMODULE" || exit
+  cd "$SUBMODULE" || continue
   release_submodule "$VERSION_OLD" "$VERSION_NEW" "$SUBMODULE"
   cd ..
 done
