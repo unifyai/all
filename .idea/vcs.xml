@@ -8,7 +8,17 @@
     <mapping directory="$PROJECT_DIR$/ivy_models" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ivy_robot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ivy_vision" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/builder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/demo-utils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/doc-builder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/ecosystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/gym" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/ivy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/ivy-dl.github.io" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/mech" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/memory" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/models" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/robot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/vision" vcs="Git" />
   </component>
 </project>
