@@ -10,6 +10,7 @@ jobs:
           path: ivy_all
           persist-credentials: false
           submodules: recursive
+          lfs: true
 
       - name: Run Tests
         run: |

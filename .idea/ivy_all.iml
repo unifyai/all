@@ -11,6 +11,7 @@
       <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_robot_demos" />
       <excludeFolder url="file://$MODULE_DIR$/all_tests_n_demos/ivy_vision_demos" />
       <excludeFolder url="file://$MODULE_DIR$/ivy_tests" />
+      <excludeFolder url="file://$MODULE_DIR$/submodules" />
     </content>
     <orderEntry type="jdk" jdkName="Remote Python 3.8.10 Docker (ivydl/ivy-all:latest)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
