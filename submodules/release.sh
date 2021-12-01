@@ -103,7 +103,7 @@ VERSION_NEW="$2"
 THIRD="$3"
 
 if [[ "$THIRD" == "all" ]]; then
-  SUBMODULES="ivy mech vision robot gym memory builder models"
+  SUBMODULES="ivy mech vision robot gym memory builder models demo-utils"
 else
   SUBMODULES="${*:3}"
 fi
