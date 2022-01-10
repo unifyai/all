@@ -36,7 +36,7 @@ release_submodule() {
     return
   fi
 
-  TEST_LOG=$(curl -L "https://img.shields.io/github/workflow/status/ivy-dl/$SUBMODULE/nightly-tests")
+  TEST_LOG=$(curl -L "https://img.shields.io/github/workflow/status/unifyai/$SUBMODULE/nightly-tests")
 
   if [ -z "$TEST_LOG" ]; then
     print_red "The test log returned empty, so cannot determine if the tests are passing or failing. Skipping."

@@ -1,36 +1,36 @@
 [submodule "submodules/mech"]
 	path = submodules/mech
-	url = git@github.com:ivy-dl/mech.git
+	url = git@github.com:unifyai/mech.git
 [submodule "submodules/ivy"]
 	path = submodules/ivy
-	url = git@github.com:ivy-dl/ivy.git
+	url = git@github.com:unifyai/ivy.git
 [submodule "submodules/vision"]
 	path = submodules/vision
-	url = git@github.com:ivy-dl/vision.git
+	url = git@github.com:unifyai/vision.git
 [submodule "submodules/robot"]
 	path = submodules/robot
-	url = git@github.com:ivy-dl/robot.git
+	url = git@github.com:unifyai/robot.git
 [submodule "submodules/gym"]
 	path = submodules/gym
-	url = git@github.com:ivy-dl/gym.git
+	url = git@github.com:unifyai/gym.git
 [submodule "submodules/memory"]
 	path = submodules/memory
-	url = git@github.com:ivy-dl/memory.git
+	url = git@github.com:unifyai/memory.git
 [submodule "submodules/models"]
 	path = submodules/models
-	url = git@github.com:ivy-dl/models.git
+	url = git@github.com:unifyai/models.git
 [submodule "submodules/builder"]
 	path = submodules/builder
-	url = git@github.com:ivy-dl/builder.git
+	url = git@github.com:unifyai/builder.git
 [submodule "submodules/demo-utils"]
 	path = submodules/demo-utils
-	url = git@github.com:ivy-dl/demo-utils.git
+	url = git@github.com:unifyai/demo-utils.git
 [submodule "submodules/doc-builder"]
 	path = submodules/doc-builder
-	url = git@github.com:ivy-dl/doc-builder.git
-[submodule "submodules/ivy-dl.github.io"]
-	path = submodules/ivy-dl.github.io
-	url = git@github.com:ivy-dl/ivy-dl.github.io.git
+	url = git@github.com:unifyai/doc-builder.git
+[submodule "submodules/unifyai.github.io"]
+	path = submodules/unifyai.github.io
+	url = git@github.com:unifyai/unifyai.github.io.git
 [submodule "submodules/ecosystem"]
 	path = submodules/ecosystem
-	url = git@github.com:ivy-dl/ecosystem.git
+	url = git@github.com:unifyai/ecosystem.git
