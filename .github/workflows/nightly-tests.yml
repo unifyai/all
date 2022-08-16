@@ -13,4 +13,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          docker run --rm -v `pwd`/ivy_all:/ivy_all ivydl/ivy-all:latest python3 -m pytest all_tests_n_demos/
+          docker run --rm -v `pwd`/ivy_all:/ivy_all unifyai/ivy-all:latest python3 -m pytest all_tests_n_demos/
